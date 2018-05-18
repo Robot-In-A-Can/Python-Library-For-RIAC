@@ -1,4 +1,4 @@
-# evelabs Python Library
+# Robot In A Can Python Library for EveLab 1.4
 
 This is a library to control your evelabs from the Python programming language. It is a modification of Ben Pirt's library for the Mirobot. It has a simple API which mirrors the basic movements that evelabs can do. Here's a sample program that runs through the API:
 
