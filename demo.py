@@ -22,12 +22,7 @@ else:
 # connect to evelabs - there are a few different ways of doing this
 
 # Use the host we specified on the command line
-#evelabs = evelabs(host, debug=True)
-
-# Create a evelabs instance
-evelabs = evelabs(debug=True)
-# Autoconnect to a evelabs on our network (there can be only one)
-evelabs.autoConnect()
+evelabs = evelabs(host, debug=True)
 
 # Get a menu so we can select which evelabs to connect to
 #evelabs.autoConnect(interactive=True)
@@ -47,6 +42,6 @@ evelabs.penup()
 
 while True:
   evelabs.gpioOn(10)
-  sleep(1)
+  time.sleep(1)
   evelabs.gpioOff(10)
-  sleep(1)
+  time.sleep(1)
