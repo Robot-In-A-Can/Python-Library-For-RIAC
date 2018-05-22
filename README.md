@@ -30,16 +30,16 @@ This is a library to control your evelabs from the Python programming language. 
     evelabs.disconnect()
 
     # Reads From Analog Pin # 0
-    analogInput(0):
+    evelabs.analogInput(0):
 
     # Digital read on pin 16
-    digitalInput(16):
+    evelabs.digitalInput(16):
 
     # Turn GPIO 10 on
-    gpioOn(10):
+    evelabs.gpioOn(10):
 
     # Turn GPIO 10 off
-    gpioOff(self, pin):
+    evelabs.gpioOff(self, pin):
 
 There are a few different ways of connecting to evelabs:
 
