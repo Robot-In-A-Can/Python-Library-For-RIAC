@@ -16,42 +16,42 @@ class SocketHandler(threading.Thread):
 
     #Override
     def on_message(ws, message):
-        self.recv_q.put(json.loads(message))
-        print(message)
+      self.recv_q.put(json.loads(message))
+      print(message)
 
     #Override
     def on_error(ws, error):
-        self.ws.stop()
-        print(error)
+      self.ws.stop()
+      print(error)
 
     #Override
     def on_close(ws):
-        self.ws.stop()
-        # TODO: implement reconnection strategy
+      self.ws.stop()
+      # TODO: implement reconnection strategy
 
     #Override
     def stop(self):
-        self.ws.stop()
+      self.ws.stop()
 
     #Override
     def on_open(ws):
-        self.ready = True;
+      self.ready = True;
 
     self.ws = websocket.WebSocketApp('ws://%s:8899/websocket' % host,
-        on_message = on_message,
-        on_error = on_error,
-        on_close = on_close,
-        on_open = on_open)
+      on_message = on_message,
+      on_error = on_error,
+      on_close = on_close,
+      on_open = on_open)
 
     #Override
     def run_ws():
-        self.ws.run_forever()
+      self.ws.run_forever()
 
     # Run the WebSocket handler in its own thread
     threading.Thread(target=run_ws).start()
 
     if (self.debug):
-        print('opened socket to %s:%d' % (host, 8899))
+      print('opened socket to %s:%d' % (host, 8899))
 
 
 
