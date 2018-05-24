@@ -65,11 +65,11 @@ class SocketHandler(threading.Thread):
           self.ws.close()
           break
       
-          if self.debug: 
-            print("Tx: " + json.dumps(msg))
-          msg_to_send = json.dumps(msg) + "\r\n"
-          # Send the message
-          self.ws.send(msg_to_send)
-          self.send_q.task_done()
+        if self.debug: 
+          print("Tx: " + json.dumps(msg))
+        msg_to_send = json.dumps(msg) + "\r\n"
+        # Send the message
+        self.ws.send(msg_to_send)
+        self.send_q.task_done()
 
 
